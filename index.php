@@ -47,7 +47,7 @@ require_once('commentaire.php');
     
 
 <h3>billet</h3>
-    <form action="index.php", method="POST">
+    <form   method="POST">
     <input type="submit" value="getBillets" name="getBillets"> <br> <br>
     <input type="number" name="idBillet"  >
     <input type="submit" value="getBillet" name="getBillet">
@@ -83,4 +83,5 @@ require_once('commentaire.php');
     </form>
 </body>
 </html>
+
 

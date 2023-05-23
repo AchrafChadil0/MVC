@@ -14,7 +14,7 @@ class Commentaire extends model {
             $stm->bindParam(1, $idBillet, PDO::PARAM_INT);
             $stm->execute();
             $commentaires = $stm->fetchAll(PDO::FETCH_ASSOC);
-            return $this->toJsonFile($commentaires);
+            return $commentaires;
 
 
         } catch (\PDOException $th) {

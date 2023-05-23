@@ -3,6 +3,8 @@ require_once('model.php');
 
 
 class Billet extends model{
+  
+    
     
     public function getBillets(){
         try {
@@ -12,8 +14,8 @@ class Billet extends model{
             $stm = $db->prepare($sql);
             $stm->execute();
             $billets = $stm->fetchAll(PDO::FETCH_ASSOC);
-            $this->toJsonFile($billets);
-            return $this->toJsonFile($billets);
+            
+            return $billets;
             
 
         } catch (\PDOException $th) {
@@ -34,7 +36,7 @@ class Billet extends model{
             $stm->execute();
             $billet = $stm->fetchAll(PDO::FETCH_ASSOC);
             
-            return $this->toJsonFile($billet);
+            return $billet;
 
         } catch (\PDOException $th) {
 
@@ -56,7 +58,7 @@ $obj = new Billet();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['getBillets'])) {
         
-        return $obj->getBillets();
+        return $obj->getBillets() ;
         
         
     }
